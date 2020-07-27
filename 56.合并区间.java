@@ -44,7 +44,7 @@ class Solution {
             return intervals;
         }
 
-        // 1. 如何排序， 2.如果进行自定义排序
+        // 1. 如何排序， 2.如果进行自定义排序 xccc
         // Collections.sort, Arrays.sort, java8高级写法： lambd表达式
         Arrays.sort(intervals, new Comparator<int[]>() {
             @Override
