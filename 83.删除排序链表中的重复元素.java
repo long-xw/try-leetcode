@@ -35,6 +35,25 @@
  */
 class Solution {
   public ListNode deleteDuplicates(ListNode head) {
+    return deleteDuplicates2(head);
+  }
+
+  public ListNode deleteDuplicates2(ListNode head) {
+    ListNode dummy = new ListNode();
+    ListNode current = dummy;
+    int compVal = Integer.MIN_VALUE;
+    for (ListNode node = head; node != null; node = node.next) {
+      if (node.val != compVal) {
+        compVal = node.val;
+        ListNode node1 = new ListNode(compVal);
+        current.next = node1;
+        current = current.next;
+      }
+    }
+    return dummy.next;
+  }
+
+  public ListNode deleteDuplicates1(ListNode head) {
 
     ListNode current = head;
     while (current != null && current.next != null) {
@@ -47,4 +66,5 @@ class Solution {
     return head;
   }
 }
+
 // @lc code=end
