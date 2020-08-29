@@ -65,17 +65,17 @@ class Solution {
     return root;
   }
 
-  public TreedNode invertTree2(TreeNode root) {
+  public TreeNode invertTree2(TreeNode root) {
     if (root == null) {
       return null;
     }
-    Stack<TreeNode> stack = new Stack<>();
+    Stack<TreeNode> stack = new Stack();
     stack.push(root);
-    while (!stack.isEmpth()) {
+    while (!stack.isEmpty()) {
       TreeNode current = stack.pop();
-      TreeNode temp = current.left;
+      TreeNode tmp1 = current.left;
       current.left = current.right;
-      temp = current.right;
+      current.right = tmp1;
       if (current.left != null) {
         stack.push(current.left);
       }
